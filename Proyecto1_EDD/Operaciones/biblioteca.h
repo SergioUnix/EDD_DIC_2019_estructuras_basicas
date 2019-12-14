@@ -1,25 +1,25 @@
-
+#ifndef BIBLIOTECA_H_INCLUDED
+#define BIBLIOTECA_H_INCLUDED
+#include<fstream>
 #include <iostream>
 #include <stdlib.h>
 #include<string.h>
-#include<fstream>
-#include "json.hpp"
+class Operacion
+{ public:
 
+         std::string Cuenta(std::string s, const char Separadorr);
+         std::vector<std::string> crear_vector(std::string cadena);
+         void parser();
 
-using json=nlohmann::json;
+     private:
 
-using namespace std;
-
-
-
-
-
+};
 
 
 // recibe lineas y quita todos los caracteres dejando solo el " y la cadena que esta dentro de ella; que separa las palabras, devuelve lineas
-string Cuenta(string s, const char Separadorr) {
-    string concatenar;
-    string resultante="";
+std::string Operacion::Cuenta(std::string s, const char Separadorr) {
+    std::string concatenar;
+    std::string resultante="";
     for (int i = 0; i < s.size(); i++){
         if (s[i] == Separadorr) {
 
@@ -34,11 +34,11 @@ return resultante;
 }
 
 //Crea vector con todos las palabras que estaban entre comillas, recibe un string que trae palabras separadas con un "
-vector<string> crear_vector(string cadena){
+std::vector<std::string> Operacion::crear_vector(std::string cadena){
     //agrego una " al final del texto
-    string texto_parseado = cadena + '"';
-    vector <string> arreglo;
-    string concatenar;
+    std::string texto_parseado = cadena + '"';
+    std::vector <std::string> arreglo;
+    std::string concatenar;
  for (int i = 0; i < texto_parseado.size(); i++){
         if (texto_parseado[i] == '"'&& i!=texto_parseado.size()-1) {
 
@@ -57,18 +57,20 @@ vector<string> crear_vector(string cadena){
   return arreglo;
 }
 
-////propio parser
-void parser(){
-ifstream archivo;
-string texto;
-string texto_parseado;
-vector<string> parseado;
 
-archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
+
+
+void Operacion::parser(){
+std::ifstream archivo;
+std::string texto;
+std::string texto_parseado;
+std::vector<std::string> parseado;
+
+archivo.open("Library.json", std::ios:: in); //abrimos el archivo en modo lectura
 
 //
  if(archivo.fail()){
-    cout<<"no se puedo abrir el archivo ";
+    std::cout<<"no se puedo abrir el archivo ";
     exit(1);
  }
  while(!archivo.eof()){  //mientras no sea el final del archivo
@@ -78,7 +80,7 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
  }
 
 //imprimo el texto parseado, listo para mandar a convertirlo a arreglo
- cout << texto_parseado<<endl <<endl; // texto parseado
+ std::cout << texto_parseado<<std::endl <<std::endl; // texto parseado
 
 //mando el string para que sea devuelo como vector donde las posiciones son cada palabra
  parseado = crear_vector(texto_parseado);
@@ -92,7 +94,7 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
 
 
 //imprimo el ultimo para ver cual es
- cout << parseado[parseado.size()-1]<<endl<< endl;
+ std::cout << parseado[parseado.size()-1]<<std::endl<< std::endl;
 
 
 
@@ -100,13 +102,13 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
  for (int i = 0; i < parseado.size(); i++)
     {
         if (parseado[i]=="Artist" && parseado[i+1]=="Name"){
-        cout << "ArtistaN :"<<parseado[i+2]<<endl;  i++; i++;
+        std::cout << "ArtistaN :"<<parseado[i+2]<<std::endl;  i++; i++;
                     for (int j = i; i < parseado.size(); j++){
                        if (parseado[j]=="Name" && parseado[j+2]=="Month"){
-                            cout <<"AlbumN: "<<parseado[j+1]<<"Month "<<parseado[j+3]<<endl; j++; j++; j++;
+                            std::cout <<"AlbumN: "<<parseado[j+1]<<"Month "<<parseado[j+3]<<std::endl; j++; j++; j++;
                                    for (int k = j; j < parseado.size(); k++){
                                        if (parseado[k]=="Name" && parseado[k+2]=="File"){
-                                        cout <<"Name: "<<parseado[k+1]<<"File:  "<<parseado[k+3]<<endl;
+                                        std::cout <<"Name: "<<parseado[k+1]<<"File:  "<<parseado[k+3]<<std::endl;
                                        }
                                        if(parseado[k]=="Name" &&parseado[k+2]=="Month" || k==parseado.size()-1){break;}
                                    }
@@ -137,51 +139,6 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
 
 
 
-int main()
-{
-
-    int a, b;
-    do{
-        cout << "1- Leer un archivo \n";
-        cout << "2- retiro \n";
-        cout << "3- salir \n \n";
-        cin>>a;
-
-        switch (a)
-        {
-           case 1:
-           cout <<" Se leera el archivo a continuación.. \n";
-
-                     break;
-           case 2:
-           cout <<" parser del archivo json \n \n \n";
-           parser();
-           break;
-           case 3:
-
-                cout <<" Seguro que quieres ...?  SI o NO \n";
-                cout <<"\n 1-SI \n";
-                cout <<"\n 2-NO \n";
-                cin>>b;
-                if(b==1)
-                {
-                    return 0;
-                }else{
-                    return main();
-                }
-                break;
-           default:
-                return main();
-                break;
-           }
-        }
-        while (a != 3);
-        system("pause");
-        return main();
-
-}
 
 
-
-
-
+#endif // BIBLIOTECA_H_INCLUDED
