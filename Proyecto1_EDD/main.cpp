@@ -4,7 +4,7 @@
 #include<string.h>
 #include<fstream>
 #include "json.hpp"
-
+#include "EDD/listadoble.h"
 
 using json=nlohmann::json;
 
@@ -78,7 +78,7 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
  }
 
 //imprimo el texto parseado, listo para mandar a convertirlo a arreglo
- cout << texto_parseado<<endl <<endl; // texto parseado
+//cout << texto_parseado<<endl <<endl; // texto parseado
 
 //mando el string para que sea devuelo como vector donde las posiciones son cada palabra
  parseado = crear_vector(texto_parseado);
@@ -92,7 +92,7 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
 
 
 //imprimo el ultimo para ver cual es
- cout << parseado[parseado.size()-1]<<endl<< endl;
+ //cout << parseado[parseado.size()-1]<<endl<< endl;
 
 
 
@@ -103,10 +103,12 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
         cout << "ArtistaN :"<<parseado[i+2]<<endl;  i++; i++;
                     for (int j = i; i < parseado.size(); j++){
                        if (parseado[j]=="Name" && parseado[j+2]=="Month"){
-                            cout <<"AlbumN: "<<parseado[j+1]<<"Month "<<parseado[j+3]<<endl; j++; j++; j++;
+                            cout <<"AlbumN:"<<parseado[j+1]<<" Month:"<<parseado[j+3]<<" Year:"<<parseado[j+5]<<endl;
+
+                              j++; j++; j++;
                                    for (int k = j; j < parseado.size(); k++){
                                        if (parseado[k]=="Name" && parseado[k+2]=="File"){
-                                        cout <<"Name: "<<parseado[k+1]<<"File:  "<<parseado[k+3]<<endl;
+                                        cout <<"Name:"<<parseado[k+1]<<" File:"<<parseado[k+3]<<" Rating:"<<parseado[k+5]<<endl;
                                        }
                                        if(parseado[k]=="Name" &&parseado[k+2]=="Month" || k==parseado.size()-1){break;}
                                    }
@@ -143,21 +145,34 @@ int main()
     int a, b;
     do{
         cout << "1- Leer un archivo \n";
-        cout << "2- retiro \n";
-        cout << "3- salir \n \n";
+        cout << "2- prueba de artistas \n";
+        cout << "3- no asignado \n";
+        cout << "4- no asignado \n";
+        cout << "5- no asignado \n";
+        cout << "6- salir \n \n";
+
+
         cin>>a;
 
         switch (a)
         {
            case 1:
-           cout <<" Se leera el archivo a continuación.. \n";
-
-                     break;
+           cout <<" Prueba del archivo json \n \n \n";
+            parser();
+           break;
            case 2:
-           cout <<" parser del archivo json \n \n \n";
-           parser();
+           cout <<" prueba del arreglo artista \n \n \n";
+
            break;
            case 3:
+           cout <<" prueba del arreglo artista \n \n \n";
+
+           break;
+           case 4:
+           cout <<" prueba del arreglo artista \n \n \n";
+
+           break;
+           case 6:
 
                 cout <<" Seguro que quieres ...?  SI o NO \n";
                 cout <<"\n 1-SI \n";
@@ -175,7 +190,7 @@ int main()
                 break;
            }
         }
-        while (a != 3);
+        while (a != 5);
         system("pause");
         return main();
 

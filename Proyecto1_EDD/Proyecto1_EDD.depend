@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1576294450 source:c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\main.cpp
+1576303965 source:c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\main.cpp
 	<iostream>
 	<stdlib.h>
 	<string.h>
 	<fstream>
 	"json.hpp"
+	"EDD/listadoble.h"
 
 1575197604 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\json.hpp
 	<algorithm>
@@ -173,4 +174,16 @@
 	<cstring>
 	<limits>
 	<type_traits>
+
+1576303467 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\listdoble.h
+
+1576304115 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\listadoble.h
+
+1576306449 source:c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\clases\artista.cpp
+	"artista.h"
+	<string>
+	<iostream>
+
+1576306270 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\clases\artista.h
+	<string>
 
