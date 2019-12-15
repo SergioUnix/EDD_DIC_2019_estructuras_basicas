@@ -5,6 +5,8 @@
 #include<fstream>
 #include "json.hpp"
 #include "EDD/listadoble.h"
+#include "Clases/artista.h"
+
 
 using json=nlohmann::json;
 
@@ -33,6 +35,8 @@ resultante = resultante + concatenar;
 return resultante;
 }
 
+
+
 //Crea vector con todos las palabras que estaban entre comillas, recibe un string que trae palabras separadas con un "
 vector<string> crear_vector(string cadena){
     //agrego una " al final del texto
@@ -57,25 +61,29 @@ vector<string> crear_vector(string cadena){
   return arreglo;
 }
 
+
+
+
+
 ////propio parser
 void parser(){
 ifstream archivo;
 string texto;
 string texto_parseado;
 vector<string> parseado;
+ListaDoble <Artista*> *lista_artistas= new ListaDoble<Artista*>();
 
 archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
 
-//
+
  if(archivo.fail()){
     cout<<"no se puedo abrir el archivo ";
-    exit(1);
- }
+    exit(1);}
+
+
  while(!archivo.eof()){  //mientras no sea el final del archivo
     getline(archivo, texto);
-   texto_parseado = texto_parseado + Cuenta(texto,'"');
-
- }
+   texto_parseado = texto_parseado + Cuenta(texto,'"'); }
 
 //imprimo el texto parseado, listo para mandar a convertirlo a arreglo
 //cout << texto_parseado<<endl <<endl; // texto parseado
@@ -100,7 +108,7 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
  for (int i = 0; i < parseado.size(); i++)
     {
         if (parseado[i]=="Artist" && parseado[i+1]=="Name"){
-        cout << "ArtistaN :"<<parseado[i+2]<<endl;  i++; i++;
+        cout << "ArtistaN :"<<parseado[i+2]<<endl;  lista_artistas->add_last(new Artista(parseado[i+2]));  i++; i++;
                     for (int j = i; i < parseado.size(); j++){
                        if (parseado[j]=="Name" && parseado[j+2]=="Month"){
                             cout <<"AlbumN:"<<parseado[j+1]<<" Month:"<<parseado[j+3]<<" Year:"<<parseado[j+5]<<endl;
@@ -115,15 +123,15 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
 
                        }
                         if(parseado[j]=="Artist" || j==parseado.size()-1){break;}
-                    }
+}}}  //termina el for
 
 
 
+ archivo.close(); //cerramos el archivo
 
 
-
-        }
-
+    //Artista *persona = lista_artistas->get_element_at(0);
+    //persona->imprimir();
 
 
  }
@@ -133,14 +141,12 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
 
 
 
-
- archivo.close(); //cerramos el archivo
-}
-
-
-
 int main()
 {
+    Persona *per= new Persona(2,"Arturo");
+    per->printPersona();
+    Artista *jod= new Artista("Eduardo");
+    jod->imprimir();
 
     int a, b;
     do{
@@ -162,6 +168,8 @@ int main()
            break;
            case 2:
            cout <<" prueba del arreglo artista \n \n \n";
+
+
 
            break;
            case 3:

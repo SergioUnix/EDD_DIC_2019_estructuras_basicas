@@ -9,10 +9,10 @@ class Artista{
     public:
 
     std::string nombre;
-    Artista(std::string nombre)
+    Artista(std::string _nombre)
     {
 
-        this->nombre = nombre;
+        this->nombre = _nombre;
     }
 
 
