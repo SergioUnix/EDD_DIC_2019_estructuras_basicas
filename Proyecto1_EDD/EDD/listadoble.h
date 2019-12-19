@@ -40,6 +40,8 @@ class ListaDoble
          void add_at(T dato, int index);
          void remove_at(int index);
 
+
+
          T get_element_at(int index);
 
      private:
@@ -150,5 +152,8 @@ void ListaDoble<T>::remove_at(int index)
 
     // return 0;
 }
+
+
+
 
 #endif // LISTADOBLE_H_INCLUDED

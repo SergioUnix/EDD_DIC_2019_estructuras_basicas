@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Clases/artista.cpp" />
+		<Unit filename="Clases/artista.h" />
+		<Unit filename="EDD/cubo.h" />
+		<Unit filename="EDD/listadoble.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

@@ -6,12 +6,30 @@
 #include "json.hpp"
 #include "EDD/listadoble.h"
 #include "Clases/artista.h"
+#include "EDD/cubo.h"
+
 
 
 using json=nlohmann::json;
 
 using namespace std;
 
+
+
+void cmd(){
+    while (true){
+        string sentencia="dot -Tpng graf.txt -o graf.png";
+        string sentencia2="start graf.png";
+        cout <<"Escriba exit para salir: ";
+        string comando;
+        getline(cin,comando);
+        system(sentencia.c_str());
+        system(sentencia2.c_str());
+
+        if(comando=="exit"|| comando=="EXIT") break;
+
+
+    }}
 
 
 
@@ -72,6 +90,9 @@ string texto;
 string texto_parseado;
 vector<string> parseado;
 ListaDoble <Artista*> *lista_artistas= new ListaDoble<Artista*>();
+
+
+
 
 archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
 
@@ -143,10 +164,25 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
 
 int main()
 {
-    Persona *per= new Persona(2,"Arturo");
-    per->printPersona();
+/////////  Objeto tipo Artista
     Artista *jod= new Artista("Eduardo");
     jod->imprimir();
+
+//////// Objeto tipo Cubo
+Cubo <string> *cub= new Cubo<string>();
+cub->insertar_elemento(20,8,"Anio1");
+cub->insertar_elemento(30,8,"Anio1");
+cub->insertar_elemento(30,9,"Anio2");
+cub->insertar_elemento(40,10,"Anio3");
+cub->insertar_elemento(50,11,"Anio4");
+//cout << cub->grafic();
+//cub->generar_txt();
+
+
+
+
+
+
 
     int a, b;
     do{
@@ -167,7 +203,8 @@ int main()
             parser();
            break;
            case 2:
-           cout <<" prueba del arreglo artista \n \n \n";
+           cout <<" Ejecutar un comando \n \n \n";
+           cmd();
 
 
 

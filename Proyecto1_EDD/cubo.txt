@@ -1,0 +1,50 @@
+digraph Sparce_Matrix { 
+node [shape=box]  
+Mt[ label = "Matrix", width = 1.5, style = filled, fillcolor = firebrick1, group = 1 ];  
+/*nodos vacíos, necesarios para anular la ubicación de nodo predeterminada de graphiz  */ 
+ e0[ shape = point, width = 0 ];  
+e1[ shape = point, width = 0 ];   
+U8[label = "Agosto" width = 1.5 style = filled, fillcolor = bisque1, group =1];  
+U9[label = "Septiembre" width = 1.5 style = filled, fillcolor = bisque1, group =1];  
+U10[label = "Octubre" width = 1.5 style = filled, fillcolor = bisque1, group =1];  
+U11[label = "Noviembre" width = 1.5 style = filled, fillcolor = bisque1, group =1];  
+U8-> U9; 
+U9-> U8; 
+U9-> U10; 
+U10-> U9; 
+U10-> U11; 
+U11-> U10; 
+A20[label = "20" width = 1.5 style = filled, fillcolor = lightskyblue, group =20];  
+A30[label = "30" width = 1.5 style = filled, fillcolor = lightskyblue, group =30];  
+A40[label = "40" width = 1.5 style = filled, fillcolor = lightskyblue, group =40];  
+A50[label = "50" width = 1.5 style = filled, fillcolor = lightskyblue, group =50];  
+A20-> A30; 
+A30-> A20; 
+A30-> A40; 
+A40-> A30; 
+A40-> A50; 
+A50-> A40; 
+Mt -> U8; Mt -> A20; 
+{ rank = same; Mt;A20; A30; A40; A50; } 
+N208 [label = "Anio1" width = 1.5, group =20 ];  
+N308 [label = "Anio1" width = 1.5, group =30 ];  
+N309 [label = "Anio2" width = 1.5, group =30 ];  
+N4010 [label = "Anio3" width = 1.5, group =40 ];  
+N5011 [label = "Anio4" width = 1.5, group =50 ];  
+U8-> N208; 
+A20-> N208; 
+N208-> N308; 
+N308-> N208; 
+A30-> N308; 
+{ rank = same; U8;N208;N308;} 
+U9-> N309; 
+N309-> N308; 
+N308-> N309; 
+{ rank = same; U9;N309;} 
+U10-> N4010; 
+A40-> N4010; 
+{ rank = same; U10;N4010;} 
+U11-> N5011; 
+A50-> N5011; 
+{ rank = same; U11;N5011;} 
+}
