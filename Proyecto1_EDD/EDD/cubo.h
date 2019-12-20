@@ -172,7 +172,7 @@ class Cubo
        }
 
        Nodo* crear_fila(int y){
-           string mes="";
+           std::string mes="";
            if(y==1){mes="Enero";}else if(y==2){mes="Febrero";}else if(y==3){mes="Marzo";}else if(y==4){mes="Abril";}else if(y==5){mes="Mayo";}
            else if(y==6){mes="Junio";}else if(y==7){mes="Julio";}else if(y==8){mes="Agosto";}else if(y==9){mes="Septiembre";}else if(y==10){mes="Octubre";}
            else if(y==11){mes="Noviembre";}else if(y==12){mes="Diciembre";}
@@ -184,13 +184,13 @@ class Cubo
        }
 
 
-void  insertar_elemento(int x, int y, string dato){
+void  insertar_elemento(int x, int y, std::string dato){
         Nodo * nuevo= new Nodo(x,y,dato);
         Nodo* NodoColumna = this->buscar_columna(x);
         Nodo* NodoFila =this->buscar_fila(y);
 
         if(NodoColumna == 0 && NodoFila == 0){
-         cout<< "Caso1"<<endl;
+         std::cout<< "Caso1"<<std::endl;
          NodoColumna= this->crear_columna(x);
          //cout << NodoColumna->getX()<<" "<<NodoColumna->getX()<<endl;
          NodoFila = this->crear_fila(y);
@@ -200,21 +200,21 @@ void  insertar_elemento(int x, int y, string dato){
          return;
 
          }else if(NodoColumna == 0 && NodoFila != 0){
-         cout<< "Caso2"<<endl;
+         std::cout<< "Caso2"<<std::endl;
          NodoColumna= this->crear_columna(x);
          nuevo = this->insertar_ordenado_columna(nuevo,NodoFila);
          nuevo = this->insertar_ordenado_fila(nuevo, NodoColumna);
          return;
 
          }else if(NodoColumna != 0 && NodoFila == 0){
-         cout<< "Caso3"<<endl;
+         std::cout<< "Caso3"<<std::endl;
          NodoFila = this->crear_fila(y);
          nuevo = this->insertar_ordenado_columna(nuevo,NodoFila);
          nuevo = this->insertar_ordenado_fila(nuevo, NodoColumna);
          return;
 
          }else if(NodoColumna != 0 && NodoFila != 0){
-         cout<< "Caso4"<<endl;
+         std::cout<< "Caso4"<<std::endl;
          nuevo = this->insertar_ordenado_columna(nuevo,NodoFila);
          nuevo = this->insertar_ordenado_fila(nuevo, NodoColumna);
          return;
@@ -224,27 +224,27 @@ void  insertar_elemento(int x, int y, string dato){
 
 }
 
-string grafic(){
-    string linea1="digraph Sparce_Matrix { \n";
-    string linea2="node [shape=box]  \n";
-    string linea3="Mt[ label = \"Matrix\", width = 1.5, style = filled, fillcolor = firebrick1, group = 1 ];  \n";
-    string linea4="/*nodos vacíos, necesarios para anular la ubicación de nodo predeterminada de graphiz  */ \n e0[ shape = point, width = 0 ];  \n";
-    string linea5="e1[ shape = point, width = 0 ];   \n";
+std::string grafic(){
+    std::string linea1="digraph Sparce_Matrix { \n";
+    std::string linea2="node [shape=box]  \n";
+    std::string linea3="Mt[ label = \"Matrix\", width = 1.5, style = filled, fillcolor = firebrick1, group = 1 ];  \n";
+    std::string linea4="/*nodos vacíos, necesarios para anular la ubicación de nodo predeterminada de graphiz  */ \n e0[ shape = point, width = 0 ];  \n";
+    std::string linea5="e1[ shape = point, width = 0 ];   \n";
 
 
     /// aca se grafica el eje Y
       Nodo *temp1 = this->root->getDown();
      int j=0;
      int comodin2=-1;
-     string primeroY="";
-     string linea6="";
-     string linea7=""; ///links de Y
+     std::string primeroY="";
+     std::string linea6="";
+     std::string linea7=""; ///links de Y
      /// me ayuda  a recorrer en forma horizontal
      Nodo *recoX=this->root->getDown();
      /// Nodos fila
-     string filas="";
-     string punteros_fila="";
-     string same="";
+     std::string filas="";
+     std::string punteros_fila="";
+     std::string same="";
      int comodin_fila=-1;
                 while(temp1!=0)
                 {
@@ -295,20 +295,20 @@ string grafic(){
                 comodin_fila=-1;
 
                 }
-    string same_completo="{ rank = same; "+same+"} \n";
+    std::string same_completo="{ rank = same; "+same+"} \n";
 
 
 
      Nodo *temp = this->root->getNext();
      int i=0;
      int comodin=-1;
-     string primeroX="";
-     string linea8="";
-     string linea9="";
-     string para_linea11="";
+     std::string primeroX="";
+     std::string linea8="";
+     std::string linea9="";
+     std::string para_linea11="";
      /// Nodos fila
-     string columnas="";
-     string punteros_columna="";
+     std::string columnas="";
+     std::string punteros_columna="";
      int comodin_columna=-1;
                 while(temp!=0)
                 {
@@ -330,25 +330,25 @@ string grafic(){
                 }
 
 
-    string linea10="Mt -> "+primeroY+"; Mt -> "+primeroX+"; \n";
-    string linea11="{ rank = same; Mt;"+ para_linea11 +"} \n";
+    std::string linea10="Mt -> "+primeroY+"; Mt -> "+primeroX+"; \n";
+    std::string linea11="{ rank = same; Mt;"+ para_linea11 +"} \n";
 
 
 
-                string total=linea1+linea2+linea3+linea4+linea5+linea6+linea7+linea8+linea9+linea10+linea11+filas+punteros_fila+"}";
+                std::string total=linea1+linea2+linea3+linea4+linea5+linea6+linea7+linea8+linea9+linea10+linea11+filas+punteros_fila+"}";
                 return total;
                  }
 
 void generar_txt(){
-string texto= grafic();
-ofstream archivo;
-archivo.open("cubo.txt", ios:: out);
+std::string texto= grafic();
+std::ofstream archivo;
+archivo.open("cubo.txt", std::ios:: out);
 
 archivo<<texto;
 archivo.close();
 
-        string sentencia="dot -Tpng cubo.txt -o cubo.png";
-        string sentencia2="start cubo.png";
+        std::string sentencia="dot -Tpng cubo.txt -o cubo.png";
+        std::string sentencia2="start cubo.png";
         system(sentencia.c_str());
         system(sentencia2.c_str());
 

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1576730563 source:c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\main.cpp
+1576851996 source:c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\main.cpp
 	<iostream>
 	<stdlib.h>
 	<string.h>
@@ -8,6 +8,7 @@
 	"EDD/listadoble.h"
 	"Clases/artista.h"
 	"EDD/cubo.h"
+	<conio.h>
 
 1575197604 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\json.hpp
 	<algorithm>
@@ -179,7 +180,10 @@
 
 1576303467 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\listdoble.h
 
-1576392707 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\listadoble.h
+1576863889 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\listadoble.h
+	<string.h>
+	<fstream>
+	"cubo.h"
 
 1576306449 source:c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\clases\artista.cpp
 	"artista.h"
@@ -189,5 +193,5 @@
 1576328308 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\clases\artista.h
 	<string>
 
-1576730702 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\cubo.h
+1576862599 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\cubo.h
 

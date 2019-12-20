@@ -7,6 +7,7 @@
 #include "EDD/listadoble.h"
 #include "Clases/artista.h"
 #include "EDD/cubo.h"
+#include <conio.h>
 
 
 
@@ -14,7 +15,38 @@ using json=nlohmann::json;
 
 using namespace std;
 
+//devuelve -1 a va antes que b, 1 si a va despues de b, y 0 si son iguales
+int comparar(string a,string b) {
+    int n1 = a.length();
+    int n2 = b.length();
+    // declaring character array
+    char char_a[n1 + 1];
+    char char_b[n2 + 1];
+    // copying the contents of the
+    // string to char array
+    strcpy(char_a, a.c_str());
+    strcpy(char_b, b.c_str());
+    return strcmp(char_a,char_b);
+}
 
+
+int mes(string mes) {
+
+if(mes=="ENERO"|| mes=="enero"){  return 1;
+}else if(mes=="Febrero"|| mes=="febrero"){ return 2;
+}else if(mes=="Marzo"|| mes=="marzo"){ return 3;
+}else if(mes=="Abril"|| mes=="abril"){ return 4;
+}else if(mes=="Mayo"|| mes=="mayo"){   return 5;
+}else if(mes=="Junio"|| mes=="junio"){ return 6;
+}else if(mes=="Julio"|| mes=="julio"){ return 7;
+}else if(mes=="Agosto"|| mes=="agosto"){return 8;
+}else if(mes=="Septiembre"|| mes=="septiembre"){ return 9;
+}else if(mes=="Octubre"|| mes=="octubre"){ return 10;
+}else if(mes=="Noviembre"|| mes=="noviembre"){ return 11;
+}else if(mes=="Diciembre"|| mes=="diciembre"){ return 12;
+}else{return 13;}
+
+}
 
 void cmd(){
     while (true){
@@ -30,6 +62,24 @@ void cmd(){
 
 
     }}
+
+
+//genero el .txt, y el contenido de graphviz dentro del archivo y lo mando a compilar en consola
+void generar_txt(string nombre, string dot){
+
+ofstream archivo;
+archivo.open(nombre+".txt", ios:: out);
+
+archivo<<dot;
+archivo.close();
+
+        string sentencia="dot -Tpng "+nombre+".txt -o "+nombre+".png";
+        string sentencia2="start "+nombre+".png";
+        system(sentencia.c_str());
+        system(sentencia2.c_str());
+
+
+}
 
 
 
@@ -89,7 +139,7 @@ ifstream archivo;
 string texto;
 string texto_parseado;
 vector<string> parseado;
-ListaDoble <Artista*> *lista_artistas= new ListaDoble<Artista*>();
+ListaDoble *lista_artistas= new ListaDoble();
 
 
 
@@ -129,7 +179,7 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
  for (int i = 0; i < parseado.size(); i++)
     {
         if (parseado[i]=="Artist" && parseado[i+1]=="Name"){
-        cout << "ArtistaN :"<<parseado[i+2]<<endl;  lista_artistas->add_last(new Artista(parseado[i+2]));  i++; i++;
+        cout << "ArtistaN :"<<parseado[i+2]<<endl;  lista_artistas->add_ordenado(parseado[i+2]);  i++; i++;
                     for (int j = i; i < parseado.size(); j++){
                        if (parseado[j]=="Name" && parseado[j+2]=="Month"){
                             cout <<"AlbumN:"<<parseado[j+1]<<" Month:"<<parseado[j+3]<<" Year:"<<parseado[j+5]<<endl;
@@ -149,8 +199,8 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
 
 
  archivo.close(); //cerramos el archivo
-
-
+cout<<lista_artistas->grafic();
+generar_txt("listaDoble",lista_artistas->grafic());
     //Artista *persona = lista_artistas->get_element_at(0);
     //persona->imprimir();
 
@@ -177,6 +227,9 @@ cub->insertar_elemento(40,10,"Anio3");
 cub->insertar_elemento(50,11,"Anio4");
 //cout << cub->grafic();
 //cub->generar_txt();
+
+
+
 
 
 
