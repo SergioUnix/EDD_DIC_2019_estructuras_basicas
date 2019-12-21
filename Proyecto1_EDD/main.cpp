@@ -5,9 +5,12 @@
 #include<fstream>
 #include "json.hpp"
 #include "EDD/listadoble.h"
+#include "EDD/listasimple.h"
 #include "Clases/artista.h"
 #include "EDD/cubo.h"
 #include <conio.h>
+#include "EDD/bs_tree.h"
+#include <stdio.h>
 
 
 
@@ -27,6 +30,18 @@ int comparar(string a,string b) {
     strcpy(char_a, a.c_str());
     strcpy(char_b, b.c_str());
     return strcmp(char_a,char_b);
+}
+int valor(string a) {
+    int n1 = a.length();
+
+    // declaring character array
+    char char_a[n1 + 1];
+
+    // copying the contents of the
+    // string to char array
+    strcpy(char_a, a.c_str());
+
+    return atoi(char_a);
 }
 
 
@@ -134,12 +149,17 @@ vector<string> crear_vector(string cadena){
 
 
 ////propio parser
-void parser(){
+ListaDoble* parser(){
 ifstream archivo;
 string texto;
 string texto_parseado;
 vector<string> parseado;
 ListaDoble *lista_artistas= new ListaDoble();
+
+
+
+vector<Lista> arreglo_canciones;
+Lista * canciones= new Lista();
 
 
 
@@ -169,25 +189,96 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
 
 
 
-
-//imprimo el ultimo para ver cual es
- //cout << parseado[parseado.size()-1]<<endl<< endl;
-
+string artista_temporal="";
+string album_temporal="";
 
 
 //El for lo que hace es lee artistas con sus albums y sus canciones y las guarda
  for (int i = 0; i < parseado.size(); i++)
     {
         if (parseado[i]=="Artist" && parseado[i+1]=="Name"){
-        cout << "ArtistaN :"<<parseado[i+2]<<endl;  lista_artistas->add_ordenado(parseado[i+2]);  i++; i++;
+          //cout << "ArtistaN :"<<parseado[i+2]<<endl;
+          lista_artistas->add_ordenado(parseado[i+2]); artista_temporal=parseado[i+2];  i++; i++;
                     for (int j = i; i < parseado.size(); j++){
                        if (parseado[j]=="Name" && parseado[j+2]=="Month"){
-                            cout <<"AlbumN:"<<parseado[j+1]<<" Month:"<<parseado[j+3]<<" Year:"<<parseado[j+5]<<endl;
+                            //cout <<"AlbumN:"<<parseado[j+1]<<" Month:"<<parseado[j+3]<<" Year:"<<parseado[j+5]<<endl;
+                              lista_artistas->datos_aCubo(parseado[j+1],parseado[j+3],valor(parseado[j+5]),artista_temporal);
+                              album_temporal=parseado[j+1];
 
                               j++; j++; j++;
                                    for (int k = j; j < parseado.size(); k++){
                                        if (parseado[k]=="Name" && parseado[k+2]=="File"){
-                                        cout <<"Name:"<<parseado[k+1]<<" File:"<<parseado[k+3]<<" Rating:"<<parseado[k+5]<<endl;
+                                        //cout <<"Name:"<<parseado[k+1]<<" File:"<<parseado[k+3]<<" Rating:"<<parseado[k+5]<<endl;
+                                           canciones->add_ordenado(parseado[k+1]);
+
+                                       }  canciones->add_first(album_temporal);
+                                       if(parseado[k]=="Name" &&parseado[k+2]=="Month" || k==parseado.size()-1){break;}
+                                   }
+
+                       }
+                        if(parseado[j]=="Artist" || j==parseado.size()-1){break;}
+}}}  //termina el for
+
+
+
+ archivo.close(); //cerramos el archivo
+//cout<<lista_artistas->grafic();
+//generar_txt("listaDoble",lista_artistas->grafic());
+
+return lista_artistas;
+ }
+
+
+
+
+
+
+////propio parser
+Lista* parser_playlist(string nombre){
+ifstream archivo;
+string texto;
+string texto_parseado;
+vector<string> parseado;
+Lista *lista_canciones= new Lista();
+
+
+
+
+archivo.open("PlayList_"+nombre+".json", ios:: in); //abrimos el archivo en modo lectura
+
+
+ if(archivo.fail()){
+    cout<<"no se puedo abrir el archivo ";
+    exit(1);}
+
+
+ while(!archivo.eof()){  //mientras no sea el final del archivo
+    getline(archivo, texto);
+   texto_parseado = texto_parseado + Cuenta(texto,'"'); }
+//mando el string para que sea devuelo como vector donde las posiciones son cada palabra
+ parseado = crear_vector(texto_parseado);
+cout << texto_parseado<<endl <<endl; // texto parseado
+string artista_temporal="";
+string album_temporal="";
+
+
+//El for lo que hace es lee artistas con sus albums y sus canciones y las guarda
+ for (int i = 0; i < parseado.size(); i++)
+    {
+        if (parseado[i]=="Year" && parseado[i+2]=="Month"){
+          //cout << "ArtistaN :"<<parseado[i+2]<<endl;
+
+                    for (int j = i; i < parseado.size(); j++){
+                       if (parseado[j]=="Name" && parseado[j+2]=="Month"){
+                            //cout <<"AlbumN:"<<parseado[j+1]<<" Month:"<<parseado[j+3]<<" Year:"<<parseado[j+5]<<endl;
+
+
+                              j++; j++; j++;
+                                   for (int k = j; j < parseado.size(); k++){
+                                       if (parseado[k]=="Name" && parseado[k+2]=="File"){
+                                        //cout <<"Name:"<<parseado[k+1]<<" File:"<<parseado[k+3]<<" Rating:"<<parseado[k+5]<<endl;
+
+
                                        }
                                        if(parseado[k]=="Name" &&parseado[k+2]=="Month" || k==parseado.size()-1){break;}
                                    }
@@ -199,13 +290,31 @@ archivo.open("Library.json", ios:: in); //abrimos el archivo en modo lectura
 
 
  archivo.close(); //cerramos el archivo
-cout<<lista_artistas->grafic();
-generar_txt("listaDoble",lista_artistas->grafic());
-    //Artista *persona = lista_artistas->get_element_at(0);
-    //persona->imprimir();
+//cout<<lista_artistas->grafic();
+//generar_txt("listaDoble",lista_artistas->grafic());
 
-
+return lista_canciones;
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -214,19 +323,48 @@ generar_txt("listaDoble",lista_artistas->grafic());
 
 int main()
 {
-/////////  Objeto tipo Artista
-    Artista *jod= new Artista("Eduardo");
-    jod->imprimir();
+ListaDoble *lista_artistas= new ListaDoble();
+Cubo <string> *comodin= new Cubo<string>();
 
-//////// Objeto tipo Cubo
-Cubo <string> *cub= new Cubo<string>();
-cub->insertar_elemento(20,8,"Anio1");
-cub->insertar_elemento(30,8,"Anio1");
-cub->insertar_elemento(30,9,"Anio2");
-cub->insertar_elemento(40,10,"Anio3");
-cub->insertar_elemento(50,11,"Anio4");
-//cout << cub->grafic();
-//cub->generar_txt();
+Lista *lista_play= new Lista();
+
+//Lista *lista_canciones=new Lista();
+////lista_canciones->add_ordenado("Ariel");
+//lista_canciones->add_ordenado("Madelyn");
+//lista_canciones->add_ordenado("Zorro");
+//lista_canciones->add_ordenado("Bebe");
+//lista_canciones->print();
+//cout<<lista_canciones->grafic();
+//lista_canciones->generar_txt();
+
+//Cubo <string> *cpu= new Cubo<string>();
+//cpu->insertar_elemento(2019,8,"Cesar");
+//cpu->insertar_elemento(2019,8,"Cesar");
+//cpu->insertar_elemento(2018,9,"Sergio");
+//cpu->insertar_elemento(2018,9,"Sergio");
+//cpu->generar_txt();
+
+
+
+//auto trees = new BSTree<std::string>{};
+	//trees->insert("zorro");
+	//trees->insert("Ariel");
+	//trees->insert("Madelyn");
+	//trees->insert("Juan");
+	//trees->remove("Juan");
+	//trees->traverse_in_order();
+    //std::cout << "Element Ariel: " << trees->search("Ariel") << std::endl;
+	//std::cout << "Element 111: " << trees->search("Perez") << std::endl;
+	//std::cout << trees->grafic_codigo();
+
+	auto playlist = new BSTree<std::string>{};
+
+
+
+
+
+
+
 
 
 
@@ -238,13 +376,19 @@ cub->insertar_elemento(50,11,"Anio4");
 
 
     int a, b;
+    string artista;
+ string instruccion, instruccion2;
+ char cadena[45];
     do{
-        cout << "1- Leer un archivo \n";
-        cout << "2- prueba de artistas \n";
-        cout << "3- no asignado \n";
+        cout << "1- Cargar el archivo json libreria \n";
+        cout << "2- Agregar PlayLists al arbol \n";
+        cout << "3- Mostrar Arbol \n";
         cout << "4- no asignado \n";
-        cout << "5- no asignado \n";
-        cout << "6- salir \n \n";
+        cout << "5- Artist Report \n";
+        cout << "6- Discography Report \n";
+        cout << "7- Album Report \n";
+        cout << "8- Top 5 Albums By Artist Report \n";
+        cout << "10- salir \n \n";
 
 
         cin>>a;
@@ -252,25 +396,50 @@ cub->insertar_elemento(50,11,"Anio4");
         switch (a)
         {
            case 1:
-           cout <<" Prueba del archivo json \n \n \n";
-            parser();
+           cout <<" Se cargaron datos Exitosamente \n \n \n";
+            lista_artistas=parser();
            break;
            case 2:
-           cout <<" Ejecutar un comando \n \n \n";
-           cmd();
+
+           cout <<" Escribir solo el nombre de la play lists \n \n \n"<<endl;
+           cin>>instruccion;
+           playlist->insert(instruccion);
+           lista_play=parser_playlist(instruccion);
 
 
+           system("pause");
 
            break;
            case 3:
-           cout <<" prueba del arreglo artista \n \n \n";
 
+           cout <<"Recorrido del Arbol InOrder \n"<<endl;
+           playlist->traverse_in_order();
+
+           system("pause");
            break;
-           case 4:
-           cout <<" prueba del arreglo artista \n \n \n";
+           case 5:
+           generar_txt("listaDoble",lista_artistas->grafic());
 
            break;
            case 6:
+           cout <<"Elija artistas \n"<<lista_artistas->cantidad_artistas()<<endl;
+           cin>>instruccion;
+
+           instruccion2=lista_artistas->get_element_at(valor(instruccion)-1);
+
+
+
+           comodin=lista_artistas->buscar_cubo(instruccion2);
+           cout << comodin->grafic();
+           comodin->generar_txt();
+
+
+           break;
+           case 7:
+
+
+           break;
+           case 10:
 
                 cout <<" Seguro que quieres ...?  SI o NO \n";
                 cout <<"\n 1-SI \n";
@@ -284,11 +453,13 @@ cub->insertar_elemento(50,11,"Anio4");
                 }
                 break;
            default:
+
                 return main();
                 break;
            }
+            system("clear");
         }
-        while (a != 5);
+        while (a != 11);
         system("pause");
         return main();
 

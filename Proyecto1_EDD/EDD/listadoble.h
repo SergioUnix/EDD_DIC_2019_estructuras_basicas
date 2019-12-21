@@ -65,6 +65,7 @@ if(mes=="ENERO"|| mes=="enero"){  return 1;
         Cubo <std::string> *cub;
 
     };
+    /////////////////////sigue la lista
      public:
          ListaDoble()
          {
@@ -79,14 +80,37 @@ if(mes=="ENERO"|| mes=="enero"){  return 1;
          void add_last(std::string dato);
          void add_at(std::string dato, int index);
          void remove_at(int index);
+        std::string cantidad_artistas();
          std::string grafic();
          void generar_txt();
          std::string get_element_at(int index);
 
+
+
+     int mes(std::string mes) {
+
+if(mes=="ENERO"|| mes=="enero"){  return 1;
+}else if(mes=="Febrero"|| mes=="febrero"){ return 2;
+}else if(mes=="Marzo"|| mes=="marzo"){ return 3;
+}else if(mes=="Abril"|| mes=="abril"){ return 4;
+}else if(mes=="Mayo"|| mes=="mayo"){   return 5;
+}else if(mes=="Junio"|| mes=="junio"){ return 6;
+}else if(mes=="Julio"|| mes=="julio"){ return 7;
+}else if(mes=="Agosto"|| mes=="agosto"){return 8;
+}else if(mes=="Septiembre"|| mes=="septiembre"){ return 9;
+}else if(mes=="Octubre"|| mes=="octubre"){ return 10;
+}else if(mes=="Noviembre"|| mes=="noviembre"){ return 11;
+}else if(mes=="Diciembre"|| mes=="diciembre"){ return 12;
+}else{return 13;}
+
+}
+
+
    int comparar(std::string a,std::string b) {
     int n1 = a.length();
     int n2 = b.length();
-    // declaring character array
+    // declaring character arrayCubo <std::string> *cub;
+
     char char_a[n1 + 1];
     char char_b[n2 + 1];
     // copying the contents of the
@@ -94,6 +118,51 @@ if(mes=="ENERO"|| mes=="enero"){  return 1;
     strcpy(char_a, a.c_str());
     strcpy(char_b, b.c_str());
     return strcmp(char_a,char_b);
+}
+
+void  buscar_cubo_agregarCancion(std::string cadena,std::string cancion)
+{
+Cubo<std::string>* cub= new Cubo<std::string>();
+        Nodo *iterador = this->first;
+        int x = 0;
+        while(iterador!=0)
+        {
+            if(cadena == iterador->getDato()){cub= iterador->getCubo();}
+            iterador = iterador->getNext();
+            x++;
+        }
+
+}
+
+
+
+
+
+Cubo <std::string>*  buscar_cubo(std::string cadena)
+{
+
+        Nodo *iterador = this->first;
+        int x = 0;
+        while(iterador!=0)
+        {
+            if(cadena == iterador->getDato()){return iterador->getCubo();}
+            iterador = iterador->getNext();
+            x++;
+        }
+
+}
+void datos_aCubo(std::string disco,std::string mes,int ano,std::string artista)
+{
+        Nodo *iterador = this->first;
+        int x = 0;
+        while(iterador!=0)
+        {
+            if(artista == iterador->getDato()){   iterador->setDatosCubo(ano,mes,disco);}
+            iterador = iterador->getNext();
+            x++;
+        }
+
+
 }
 
      private:
@@ -122,8 +191,8 @@ void ListaDoble::add_ordenado(std::string dato)
 
         while(true){
                 if(this->comparar(aux->getDato(),n->getDato())>0){
-                std::cout<<"comparo  ----------------------------------- "<<this->comparar(aux->getDato(),n->getDato())<<"---"<<aux->getDato()<<"--"<<n->getDato()<<this->getSize()<<std::endl;
-                std::cout<<"comparo  ----------------------------------- "<<aux->getDato()<<std::endl;
+                //std::cout<<"comparo  ----------------------------------- "<<this->comparar(aux->getDato(),n->getDato())<<"---"<<aux->getDato()<<"--"<<n->getDato()<<this->getSize()<<std::endl;
+                //std::cout<<"comparo  ----------------------------------- "<<aux->getDato()<<std::endl;
 
                 bandera=true;
                 break;
@@ -254,6 +323,27 @@ std::string ListaDoble::get_element_at(int index)
     }
     return 0;
 }
+
+
+std::string ListaDoble::cantidad_artistas()
+{
+    string result;
+
+        Nodo *iterador = this->first;
+        int x = 1;
+        while(iterador!=0)
+        {
+            result = result +std::to_string(x)+ "."+iterador->getDato()+" \n";
+            iterador = iterador->getNext();
+            x++;
+        }
+
+    return result;
+}
+
+
+
+
 
 void ListaDoble::remove_at(int index)
 {

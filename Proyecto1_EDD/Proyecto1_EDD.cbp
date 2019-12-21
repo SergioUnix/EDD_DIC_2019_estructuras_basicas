@@ -34,8 +34,17 @@
 		</Compiler>
 		<Unit filename="Clases/artista.cpp" />
 		<Unit filename="Clases/artista.h" />
+		<Unit filename="EDD/bs_tree.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="EDD/bs_tree_node.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="EDD/cubo.h" />
 		<Unit filename="EDD/listadoble.h" />
+		<Unit filename="EDD/listasimple.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

@@ -1,6 +1,8 @@
 #ifndef CUBO_H_INCLUDED
 #define CUBO_H_INCLUDED
 
+#include "listasimple.h"
+
 
 template<class T>
 class Cubo
@@ -19,6 +21,8 @@ class Cubo
             this->x=posx;
             this->y=posy;
             this->dato = x;
+            ///inicializo mi lista
+            this->canciones=0;
          }
 
         Nodo *getNext(){ return next;}
@@ -44,12 +48,39 @@ class Cubo
         //void setY(int y){ y = y;}
         T getDato(){ return dato;}
 
+        void setLista(Lista* list){canciones=list;}
+        Lista* getLista(){return canciones;}
+
+
+        void agregarDatosLista(std::string cadena){
+
+            canciones->add_ordenado(cadena);
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      private:
         Nodo *next;    Nodo *before;
         Nodo *up;      Nodo *down;
         Nodo *z_front; Nodo *z_back;
         int x;    int y;
         T dato;
+        Lista *canciones;
     };
 
 
@@ -62,6 +93,83 @@ class Cubo
          mes=0;
 
           }
+
+
+
+
+Lista*  buscar_lista(std::string cadena)
+{
+
+        Nodo *iterador = this->root;
+        Nodo *iterador2=iterador;
+        while(iterador!=0)
+        {
+
+                    while(iterador2!=0){
+
+                        if(iterador2->getDato()==cadena){
+                            break;
+                        }
+
+
+                        iterador2=iterador2->getDown();
+
+
+                    }
+
+
+
+
+            iterador = iterador->getNext();
+        }
+
+        return iterador2->getLista();
+
+}
+
+
+void  agregar_alista(std::string cadena,std::string cancion)
+{
+
+        Nodo *iterador = this->root;
+        Nodo *iterador2=iterador;
+        Nodo *solucion;
+        while(iterador!=0)
+        {
+
+                    while(iterador2!=0){
+
+                        if(iterador2->getDato()==cadena){
+                                iterador2=solucion; break;
+                        }
+
+
+                        iterador2=iterador2->getDown();
+
+
+                    }
+
+
+
+
+            iterador = iterador->getNext();
+        }
+
+       solucion->agregarDatosLista(cancion);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
          Nodo* buscar_fila(int y){
@@ -183,6 +291,43 @@ class Cubo
            return fila;
        }
 
+   void insertar_Z(Nodo *nuevo,int x,int y){
+
+
+         Nodo* raiz = this->root;
+         Nodo* obtenido =0;
+         Nodo* encontrado=0 ;
+
+
+                while(true){
+                    if(raiz->getY()==y){
+                        obtenido=raiz;
+
+                        while(true){
+                    if(raiz->getX()==x){
+                        raiz=obtenido;
+                        raiz=nuevo;
+                        break;
+                    }
+                    obtenido = obtenido->getNext();
+                    }
+
+                      break;
+                    }
+                    raiz =raiz->getDown();
+                    }
+
+
+
+
+
+
+
+
+         };
+
+
+
 
 void  insertar_elemento(int x, int y, std::string dato){
         Nodo * nuevo= new Nodo(x,y,dato);
@@ -215,8 +360,13 @@ void  insertar_elemento(int x, int y, std::string dato){
 
          }else if(NodoColumna != 0 && NodoFila != 0){
          std::cout<< "Caso4"<<std::endl;
+         //cout << NodoColumna->getX()<<" "<<NodoColumna->getDown()->getY()<<"  "<<NodoColumna->getDown()->getX()<<NodoFila->getDown()->getDato() <<endl;
+         //cout << NodoFila->getY()<<" "<<NodoFila->getNext()->getX()<<"  "<<NodoFila->getNext()->getY()<<NodoFila->getNext()->getDato()<<endl;
+
+         //insertar_Z(nuevo,x,y);
          nuevo = this->insertar_ordenado_columna(nuevo,NodoFila);
          nuevo = this->insertar_ordenado_fila(nuevo, NodoColumna);
+
          return;
 
          }
@@ -245,25 +395,51 @@ std::string grafic(){
      std::string filas="";
      std::string punteros_fila="";
      std::string same="";
-     int comodin_fila=-1;
+
+      int comodin_fila=-1;
+     /// recorre en el plano Z
+     std::string Z="";
+     std::string punteros_Z="";
+     std::string sameZ="";
+     Nodo *recoXZ;
+     int comodin_filaZ=-1;
+
                 while(temp1!=0)
                 {
                     recoX= temp1->getNext();
                     while(recoX!=0){
-                        if(comodin_fila<0){   punteros_fila=punteros_fila+ "U"+to_string(temp1->getY())+ "-> N"+to_string(recoX->getX())+to_string(recoX->getY())+"; \n";  same=same+ "U"+to_string(temp1->getY())+";";     comodin_fila +=1;}
+                        if(comodin_fila<0){   punteros_fila=punteros_fila+ "U"+std::to_string(temp1->getY())+ "-> N"+std::to_string(recoX->getX())+std::to_string(recoX->getY())+"; \n";  same=same+ "U"+std::to_string(temp1->getY())+";";     comodin_fila +=1;}
 
                         if(recoX!=0){
-                               filas= filas + "N"+ to_string(recoX->getX())+to_string(recoX->getY())+" [label = \""+recoX->getDato()+"\" width = 1.5, group ="+ to_string(recoX->getX()) +" ];  \n";
-                                  same=same+ "N"+ to_string(recoX->getX())+to_string(recoX->getY())+";";
+                               filas= filas + "N"+ std::to_string(recoX->getX())+std::to_string(recoX->getY())+" [label = \""+recoX->getDato()+"\" width = 1.5, group ="+ std::to_string(recoX->getX()) +" ];  \n";
+                                  same=same+ "N"+ std::to_string(recoX->getX())+std::to_string(recoX->getY())+";";
                                             if(recoX->getUp()->getY()==-1){ //si es cabecera la de arriba hace esto
-                                            punteros_fila=punteros_fila + "A"+ to_string(recoX->getUp()->getX())+ "-> N"+to_string(recoX->getX())+to_string(recoX->getY()) +"; \n";
+                                            punteros_fila=punteros_fila + "A"+ std::to_string(recoX->getUp()->getX())+ "-> N"+std::to_string(recoX->getX())+std::to_string(recoX->getY()) +"; \n";
                                             }else{ //cuando no es cabecera ejecuta esto
-                                            punteros_fila=punteros_fila + "N"+ to_string(recoX->getX())+to_string(recoX->getY())+ "-> N"+to_string(recoX->getUp()->getX())+to_string(recoX->getUp()->getY()) +"; \n";
-                                             punteros_fila=punteros_fila + "N"+ to_string(recoX->getUp()->getX())+to_string(recoX->getUp()->getY())+ "-> N"+to_string(recoX->getX())+to_string(recoX->getY()) +"; \n";
-                                            }
+                                            punteros_fila=punteros_fila + "N"+ std::to_string(recoX->getX())+std::to_string(recoX->getY())+ "-> N"+std::to_string(recoX->getUp()->getX())+std::to_string(recoX->getUp()->getY()) +"; \n";
+                                             punteros_fila=punteros_fila + "N"+ std::to_string(recoX->getUp()->getX())+std::to_string(recoX->getUp()->getY())+ "-> N"+std::to_string(recoX->getX())+std::to_string(recoX->getY()) +"; \n";
+                                           }
+                  //////////////////////////////capto los nodos en z
+                                    recoXZ=recoX->getZ_back();
+                                    while(recoXZ!=0){
+                                        if(comodin_filaZ<0){   punteros_Z=punteros_Z+ "N"+std::to_string(recoX->getX())+std::to_string(recoX->getY())+"-> Z"+std::to_string(recoX->getX())+std::to_string(recoX->getY())+"; \n";      comodin_filaZ +=1;}
+
+
+
+                                         Z= Z + "Z"+ std::to_string(recoXZ->getX())+std::to_string(recoXZ->getY())+" [label = \""+recoXZ->getDato()+"\" width = 1.5 ];  \n";
+
+
+
+                                         punteros_Z=punteros_Z +"Z"+std::to_string(recoXZ->getX())+std::to_string(recoXZ->getY())+ "-> Z"+std::to_string(recoXZ->getNext()->getX())+std::to_string(recoXZ->getNext()->getY())+"; \n" +"N"+std::to_string(recoXZ->getNext()->getX())+std::to_string(recoXZ->getNext()->getY())+ "-> N"+std::to_string(recoXZ->getX())+std::to_string(recoXZ->getY())+"; \n";
+
+
+
+                                     recoXZ= recoXZ->getZ_back();
+                                    }
+                                       /////////////////////////
 
                                   if(recoX->getNext()!=0){
-                                   punteros_fila=punteros_fila +"N"+to_string(recoX->getX())+to_string(recoX->getY())+ "-> N"+to_string(recoX->getNext()->getX())+to_string(recoX->getNext()->getY())+"; \n" +"N"+to_string(recoX->getNext()->getX())+to_string(recoX->getNext()->getY())+ "-> N"+to_string(recoX->getX())+to_string(recoX->getY())+"; \n";
+                                   punteros_fila=punteros_fila +"N"+std::to_string(recoX->getX())+std::to_string(recoX->getY())+ "-> N"+std::to_string(recoX->getNext()->getX())+std::to_string(recoX->getNext()->getY())+"; \n" +"N"+std::to_string(recoX->getNext()->getX())+std::to_string(recoX->getNext()->getY())+ "-> N"+std::to_string(recoX->getX())+std::to_string(recoX->getY())+"; \n";
 
                                    }
                         }else{break;}
@@ -277,14 +453,14 @@ std::string grafic(){
 
 
                      if(comodin2<0){
-                    primeroY="U"+ to_string(temp1->getY());
+                    primeroY="U"+ std::to_string(temp1->getY());
                     comodin2 +=1;
 
                     }
 
-                linea6 = linea6 + "U"+ to_string(temp1->getY()) + "[label = \""+  temp1->getDato() +"\" width = 1.5 style = filled, fillcolor = bisque1, group ="+ "1" +"];  \n";
+                linea6 = linea6 + "U"+ std::to_string(temp1->getY()) + "[label = \""+  temp1->getDato() +"\" width = 1.5 style = filled, fillcolor = bisque1, group ="+ "1" +"];  \n";
                 if(temp1->getDown()!=0){
-                linea7=linea7 +"U"+to_string(temp1->getY())+ "-> U"+to_string(temp1->getDown()->getY())+"; \n" +"U"+to_string(temp1->getDown()->getY())+ "-> U"+to_string(temp1->getY())+"; \n";
+                linea7=linea7 +"U"+std::to_string(temp1->getY())+ "-> U"+std::to_string(temp1->getDown()->getY())+"; \n" +"U"+std::to_string(temp1->getDown()->getY())+ "-> U"+std::to_string(temp1->getY())+"; \n";
 
                 }
 
@@ -314,15 +490,15 @@ std::string grafic(){
                 {
 
                     if(comodin<0){
-                            primeroX="A"+ to_string(temp->getX());
+                            primeroX="A"+ std::to_string(temp->getX());
                     comodin +=1;
 
                     }
 
-                linea8 = linea8 + "A"+ to_string(temp->getX()) + "[label = \""+ to_string(temp->getX()) +"\" width = 1.5 style = filled, fillcolor = lightskyblue, group ="+ to_string(temp->getX()) +"];  \n";
+                linea8 = linea8 + "A"+ std::to_string(temp->getX()) + "[label = \""+ std::to_string(temp->getX()) +"\" width = 1.5 style = filled, fillcolor = lightskyblue, group ="+ std::to_string(temp->getX()) +"];  \n";
                 if(temp->getNext()!=0){
-                linea9=linea9 +"A"+to_string(temp->getX())+ "-> A"+to_string(temp->getNext()->getX())+"; \n" +"A"+to_string(temp->getNext()->getX())+ "-> A"+to_string(temp->getX())+"; \n";}
-                para_linea11=para_linea11 + "A"+ to_string(temp->getX())+"; ";
+                linea9=linea9 +"A"+std::to_string(temp->getX())+ "-> A"+std::to_string(temp->getNext()->getX())+"; \n" +"A"+std::to_string(temp->getNext()->getX())+ "-> A"+std::to_string(temp->getX())+"; \n";}
+                para_linea11=para_linea11 + "A"+ std::to_string(temp->getX())+"; ";
                 i += 1;
                 temp = temp->getNext();
                  comodin_columna=-1;
@@ -335,7 +511,7 @@ std::string grafic(){
 
 
 
-                std::string total=linea1+linea2+linea3+linea4+linea5+linea6+linea7+linea8+linea9+linea10+linea11+filas+punteros_fila+"}";
+                std::string total=linea1+linea2+linea3+linea4+linea5+linea6+linea7+linea8+linea9+linea10+linea11+filas+punteros_fila+Z+punteros_Z+"}";
                 return total;
                  }
 
@@ -366,6 +542,9 @@ archivo.close();
 
 
 };
+
+
+
 
 
 

@@ -1,14 +1,17 @@
 # depslib dependency file v1.0
-1576851996 source:c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\main.cpp
+1576904064 source:c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\main.cpp
 	<iostream>
 	<stdlib.h>
 	<string.h>
 	<fstream>
 	"json.hpp"
 	"EDD/listadoble.h"
+	"EDD/listasimple.h"
 	"Clases/artista.h"
 	"EDD/cubo.h"
 	<conio.h>
+	"EDD/bs_tree.h"
+	<stdio.h>
 
 1575197604 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\json.hpp
 	<algorithm>
@@ -180,7 +183,7 @@
 
 1576303467 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\listdoble.h
 
-1576863889 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\listadoble.h
+1576904161 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\listadoble.h
 	<string.h>
 	<fstream>
 	"cubo.h"
@@ -193,5 +196,14 @@
 1576328308 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\clases\artista.h
 	<string>
 
-1576862599 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\cubo.h
+1576891868 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\cubo.h
+	"listasimple.h"
+
+1576886419 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\listasimple.h
+
+1576898194 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\bs_tree.h
+	<experimental/optional>
+	"bs_tree_node.h"
+
+1576896808 c:\users\admin\desktop\proyecto1_edd\proyecto1_edd\edd\bs_tree_node.h
 
