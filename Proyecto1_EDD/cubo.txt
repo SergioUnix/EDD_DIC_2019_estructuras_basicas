@@ -4,32 +4,59 @@ Mt[ label = "Matrix", width = 1.5, style = filled, fillcolor = firebrick1, group
 /*nodos vacíos, necesarios para anular la ubicación de nodo predeterminada de graphiz  */ 
  e0[ shape = point, width = 0 ];  
 e1[ shape = point, width = 0 ];   
+U2[label = "Febrero" width = 1.5 style = filled, fillcolor = bisque1, group =1];  
 U4[label = "Abril" width = 1.5 style = filled, fillcolor = bisque1, group =1];  
+U6[label = "Junio" width = 1.5 style = filled, fillcolor = bisque1, group =1];  
 U9[label = "Septiembre" width = 1.5 style = filled, fillcolor = bisque1, group =1];  
-U13[label = "" width = 1.5 style = filled, fillcolor = bisque1, group =1];  
-U4-> U9; 
-U9-> U4; 
-U9-> U13; 
-U13-> U9; 
-A2013[label = "2013" width = 1.5 style = filled, fillcolor = lightskyblue, group =2013];  
-A2015[label = "2015" width = 1.5 style = filled, fillcolor = lightskyblue, group =2015];  
-A2019[label = "2019" width = 1.5 style = filled, fillcolor = lightskyblue, group =2019];  
-A2013-> A2015; 
-A2015-> A2013; 
-A2015-> A2019; 
-A2019-> A2015; 
-Mt -> U4; Mt -> A2013; 
-{ rank = same; Mt;A2013; A2015; A2019; } 
-N20134 [label = "Sempiternal" width = 1.5, group =2013 ];  
-N20159 [label = "That's the Spirit" width = 1.5, group =2015 ];  
-N201913 [label = "Amo" width = 1.5, group =2019 ];  
-U4-> N20134; 
-A2013-> N20134; 
-{ rank = same; U4;N20134;} 
-U9-> N20159; 
-A2015-> N20159; 
-{ rank = same; U9;N20159;} 
-U13-> N201913; 
-A2019-> N201913; 
-{ rank = same; U13;N201913;} 
+U11[label = "Noviembre" width = 1.5 style = filled, fillcolor = bisque1, group =1];  
+U2-> U4; 
+U4-> U2; 
+U4-> U6; 
+U6-> U4; 
+U6-> U9; 
+U9-> U6; 
+U9-> U11; 
+U11-> U9; 
+A2002[label = "2002" width = 1.5 style = filled, fillcolor = lightskyblue, group =2002];  
+A2004[label = "2004" width = 1.5 style = filled, fillcolor = lightskyblue, group =2004];  
+A2006[label = "2006" width = 1.5 style = filled, fillcolor = lightskyblue, group =2006];  
+A2008[label = "2008" width = 1.5 style = filled, fillcolor = lightskyblue, group =2008];  
+A2010[label = "2010" width = 1.5 style = filled, fillcolor = lightskyblue, group =2010];  
+A2018[label = "2018" width = 1.5 style = filled, fillcolor = lightskyblue, group =2018];  
+A2002-> A2004; 
+A2004-> A2002; 
+A2004-> A2006; 
+A2006-> A2004; 
+A2006-> A2008; 
+A2008-> A2006; 
+A2008-> A2010; 
+A2010-> A2008; 
+A2010-> A2018; 
+A2018-> A2010; 
+Mt -> U2; Mt -> A2002; 
+{ rank = same; Mt;A2002; A2004; A2006; A2008; A2010; A2018; } 
+N20022 [label = "The Changing Of Times" width = 1.5, group =2002 ];  
+N20184 [label = "Erase Me (Deluxe)" width = 1.5, group =2018 ];  
+N20046 [label = "They're Only Chasing Safety" width = 1.5, group =2004 ];  
+N20066 [label = "Define The Great Line" width = 1.5, group =2006 ];  
+N20089 [label = "Lost In The Sound Of Separation" width = 1.5, group =2008 ];  
+N201011 [label = "Ã˜ (Disambiguation)" width = 1.5, group =2010 ];  
+U2-> N20022; 
+A2002-> N20022; 
+{ rank = same; U2;N20022;} 
+U4-> N20184; 
+A2018-> N20184; 
+{ rank = same; U4;N20184;} 
+U6-> N20046; 
+A2004-> N20046; 
+N20046-> N20066; 
+N20066-> N20046; 
+A2006-> N20066; 
+{ rank = same; U6;N20046;N20066;} 
+U9-> N20089; 
+A2008-> N20089; 
+{ rank = same; U9;N20089;} 
+U11-> N201011; 
+A2010-> N201011; 
+{ rank = same; U11;N201011;} 
 }

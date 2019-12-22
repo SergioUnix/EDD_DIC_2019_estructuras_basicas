@@ -1,465 +1,1037 @@
 {
-	"Library":[
-		{
-		  "Artist" : {
-			"Name": "The Devil Wears Prada",
-			"Albums": [
-			  {
-				"Name":"The Act",
-				"Month": "Octubre",
-				"Year": "2019",
-				"Songs": [
-				   {
-					"Name": "Switchblade",
-					"File": "c.mp3",
-					"Rating": "6.5"
-				  }
-				  ,
-				  {
-					"Name": "Lines Of Your Hands",
-					"File": "c.mp3",
-					"Rating": "6.5"
-				  }
-				  ,
-				  {
-					"Name": "Chemical",
-					"File": "c.mp3",
-					"Rating": "6.5"
-				  }
-				  ,
-				  {
-					"Name": "Wave Of Youth",
-					"File": "c.mp3",
-					"Rating": "6.5"
-				  } 
-				]
-			  }
-			  ,
-			  {
-				"Name":"Dear Love: A Beautiful Discord",
-				"Month": "Agosto",
-				"Year": "2006",
-				"Songs": [
-				   {
-					"Name": "Dogs Can Grow Beards All Over",
-					"File": "c.mp3",
-					"Rating": "2.5"
-				  }
-				  ,
-				  {
-					"Name": "Texas Is South",
-					"File": "c.mp3",
-					"Rating": "2.5"
-				  }
-				  ,
-				  {
-					"Name": "Modeify the Pronunciation",
-					"File": "c.mp3",
-					"Rating": "2.5"
-				  }
-				  ,
-				  {
-					"Name": "Salvation",
-					"File": "c.mp3",
-					"Rating": "2.5"
-				  } 
-				]
-			  }
-			  ,
-			  {
-				"Name":"Dead Throne",
-				"Month": "Septiembre",
-				"Year": "2013",
-				"Songs": [
-				   {
-					"Name": "Mammoth",
-					"File": "c.mp3",
-					"Rating": "7.5"
-				  }
-				  ,
-				  {
-					"Name": "Texas Is South",
-					"File": "c.mp3",
-					"Rating": "7.5"
-				  }
-				  ,
-				  {
-					"Name": "My Questions",
-					"File": "c.mp3",
-					"Rating": "7.5"
-				  }
-				  ,
-				  {
-					"Name": "Born To Lose",
-					"File": "c.mp3",
-					"Rating": "7.5"
-				  } 
-				]
-			  }
-			]
-		  }
-	}
-	,
-		{
-		  "Artist" : {
-			"Name": "Bring Me The Horizon",
-			"Albums": [
-			  {
-				"Name":"Sempiternal",
-				"Month": "Abril",
-				"Year": "2013",
-				"Songs": [
-				  {
-					"Name": "Can You Feel My Heart",
-					"File": "c.mp3",
-					"Rating": "2.0"
-				  }
-				  ,
-				  {
-					"Name": "The House of Wolves",
-					"File": "c.mp3",
-					"Rating": "2.0"
-				  }
-				  ,
-				  {
-					"Name": "Sleepwalking",
-					"File": "c.mp3",
-					"Rating": "2.0"
-				  }
-				  ,
-				  {
-					"Name": "Go To Hell For Heaven's Sake",
-					"File": "c.mp3",
-					"Rating": "2.0"
-				  }
-				]
-			  }
-			  ,
-			  {
-				"Name":"That's the Spirit",
-				"Month": "Septiembre",
-				"Year": "2015",
-				"Songs": [
-				  {
-					"Name": "Happy Song",
-					"File": "c.mp3",
-					"Rating": "2.5"
-				  }
-				  ,
-				  {
-					"Name": "True Friends",
-					"File": "c.mp3",
-					"Rating": "2.5"
-				  }
-				  ,
-				  {
-					"Name": "Follow You",
-					"File": "c.mp3",
-					"Rating": "2.5"
-				  }
-				  ,
-				  {
-					"Name": "Drown",
-					"File": "c.mp3",
-					"Rating": "2.5"
-				  }
-				]
-			  }
-			  ,
-			  {
-				"Name":"Amo",
-				"Month": "Enero",
-				"Year": "2019",
-				"Songs": [
-				  {
-					"Name": "Mantra",
-					"File": "c.mp3",
-					"Rating": "2.6"
-				  }
-				  ,
-				  {
-					"Name": "Sugar, Honey, Ice And Tea",
-					"File": "c.mp3",
-					"Rating": "2.6"
-				  }
-				  ,
-				  {
-					"Name": "Medicine",
-					"File": "c.mp3",
-					"Rating": "2.6"
-				  }
-				  ,
-				  {
-					"Name": "Heavy Metal",
-					"File": "c.mp3",
-					"Rating": "2.6"
-				  }
-				]
-			  }
-			]
-		  }
-		}
-		,
-	{
+  "Library":[
+    {
       "Artist" : {
-        "Name": "The Almost",
-        "Albums":[
+        "Name": "Underoath",
+        "Albums" : [
           {
-            "Name":"Southern Weather",
+            "Name": "The Changing Of Times",
+            "Month": "Febrero",
+            "Year": "2002",
+            "Songs":[
+              {
+                "Name": "When The Sun Sleeps",
+                "File": "m.mp3",
+                "Rating" : "3.0"
+              }
+              ,
+              {
+                "Name": "Letting Go Of Tonight",
+                "File": "m.mp3",
+                "Rating" : "3.0"
+              }
+              ,
+              {
+                "Name": "Angel Below",
+                "File": "m.mp3",
+                "Rating" : "3.0"
+              }
+              ,
+              {
+                "Name": "The Best Of Me",
+                "File": "m.mp3",
+                "Rating" : "3.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name": "They're Only Chasing Safety",
+            "Month": "Junio",
+            "Year": "2004",
+            "Songs":[
+              {
+                "Name": "Young And Aspiring",
+                "File": "m.mp3",
+                "Rating" : "5.5"
+              }
+              ,
+              {
+                "Name": "A Boy Brushed In Red Living In Black And White",
+                "File": "m.mp3",
+                "Rating" : "5.5"
+              }
+              ,
+              {
+                "Name": "Reinventing Your Exit",
+                "File": "m.mp3",
+                "Rating" : "5.5"
+              }
+              ,
+              {
+                "Name": "Some Will Seek Forgiveness Others Escape",
+                "File": "m.mp3",
+                "Rating" : "5.5"
+              }
+            ]
+          }
+          ,
+          {
+            "Name": "Define The Great Line",
+            "Month": "Junio",
+            "Year": "2006",
+            "Songs":[
+              {
+                "Name": "In Regards To Myself",
+                "File": "m.mp3",
+                "Rating" : "7.8"
+              }
+              ,
+              {
+                "Name": "A Moment Suspended In Time",
+                "File": "m.mp3",
+                "Rating" : "7.8"
+              }
+              ,
+              {
+                "Name": "Writing On The Walls",
+                "File": "m.mp3",
+                "Rating" : "7.8"
+              }
+              ,
+              {
+                "Name": "Everyone Looks So Good From Here",
+                "File": "m.mp3",
+                "Rating" : "7.8"
+              }
+            ]
+          }
+          ,
+          {
+            "Name": "Lost In The Sound Of Separation",
+            "Month": "Septiembre",
+            "Year": "2008",
+            "Songs":[
+              {
+                "Name": "Breathing In A New Mentality",
+                "File": "m.mp3",
+                "Rating" : "10.0"
+              }
+              ,
+              {
+                "Name": "Anyone Can Dig A Hole But It Takes A Real Man To Call It Home",
+                "File": "m.mp3",
+                "Rating" : "10.0"
+              }
+              ,
+              {
+                "Name": "Desperate Times Desperate Measures",
+                "File": "m.mp3",
+                "Rating" : "10.0"
+              }
+              ,
+              {
+                "Name": "Too Brigth To See Too Loud To Hear",
+                "File": "m.mp3",
+                "Rating" : "10.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name": "Ø (Disambiguation)",
+            "Month": "Noviembre",
+            "Year": "2010",
+            "Songs":[
+              {
+                "Name": "In Division",
+                "File": "m.mp3",
+                "Rating" : "5.6"
+              }
+              ,
+              {
+                "Name": "Catch Myself Catching Myself",
+                "File": "m.mp3",
+                "Rating" : "5.6"
+              }
+              ,
+              {
+                "Name": "Vacant Mouth",
+                "File": "m.mp3",
+                "Rating" : "5.6"
+              }
+              ,
+              {
+                "Name": "My Deteriorating Incline",
+                "File": "m.mp3",
+                "Rating" : "5.6"
+              }
+            ]
+          }
+          ,
+          {
+            "Name": "Erase Me",
             "Month": "Abril",
+            "Year": "2018",
+            "Songs":[
+              {
+                "Name": "It Has To Start Somewhere",
+                "File": "m.mp3",
+                "Rating" : "8.5"
+              }
+              ,
+              {
+                "Name": "On My Teeth",
+                "File": "m.mp3",
+                "Rating" : "8.5"
+              }
+              ,
+              {
+                "Name": "In Motion",
+                "File": "m.mp3",
+                "Rating" : "8.5"
+              }
+              ,
+              {
+                "Name": "I Gave Up",
+                "File": "m.mp3",
+                "Rating" : "8.5"
+              }
+            ]
+          }
+          ,
+          {
+            "Name": "Erase Me (Deluxe)",
+            "Month": "Abril",
+            "Year": "2018",
+            "Songs":[
+              {
+                "Name": "Rapture",
+                "File": "m.mp3",
+                "Rating" : "3.5"
+              }
+              ,
+              {
+                "Name": "Loneliness",
+                "File": "m.mp3",
+                "Rating" : "3.5"
+              }
+              ,
+              {
+                "Name": "Another Life",
+                "File": "m.mp3",
+                "Rating" : "3.5"
+              }
+              ,
+              {
+                "Name": "Wake Me",
+                "File": "m.mp3",
+                "Rating" : "3.5"
+              }
+            ]
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Artist" : {
+        "Name": "As I Lay Dying",
+        "Albums": [
+          {
+            "Name": "Frail Words Collapse",
+            "Month": "Julio",
+            "Year": "2003",
+            "Songs": [
+              {
+                "Name": "94 Hours",
+                "File": "m.mp3",
+                "Rating": "5.0"
+              }
+              ,
+              {
+                "Name": "Forever",
+                "File": "m.mp3",
+                "Rating": "5.0"
+              }
+              ,
+              {
+                "Name": "A Thousand Steps",
+                "File": "m.mp3",
+                "Rating": "5.0"
+              }
+              ,{
+                "Name": "Elegy",
+                "File": "m.mp3",
+                "Rating": "5.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name": "Shadows Are Security",
+            "Month": "Junio",
+            "Year": "2005",
+            "Songs": [
+              {
+                "Name": "Meaning In Tragedy",
+                "File": "m.mp3",
+                "Rating": "7.0"
+              }
+              ,
+              {
+                "Name": "Confined",
+                "File": "m.mp3",
+                "Rating": "7.0"
+              }
+              ,
+              {
+                "Name": "Through Struggle",
+                "File": "m.mp3",
+                "Rating": "7.0"
+              }
+              ,{
+                "Name": "Control Is Dead",
+                "File": "m.mp3",
+                "Rating": "7.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name": "An Ocean Between Us",
+            "Month": "Agosto",
             "Year": "2007",
             "Songs": [
-               {
-                "Name": "Say This Sooner",
-                "File": "c.mp3",
-                "Rating": "3.0"
+              {
+                "Name": "Separation",
+                "File": "m.mp3",
+                "Rating": "8.0"
               }
               ,
               {
-                "Name": "Southern Weather",
-                "File": "c.mp3",
-                "Rating": "3.0"
+                "Name": "Nothing Left",
+                "File": "m.mp3",
+                "Rating": "8.0"
               }
               ,
               {
-                "Name": "Everyone Here Smells Like a Rat",
-                "File": "c.mp3",
-                "Rating": "3.0"
+                "Name": "The Sound Of Truth",
+                "File": "m.mp3",
+                "Rating": "8.0"
               }
-              ,
-              {
-                "Name": "Call Back When I'm Honest",
-                "File": "c.mp3",
-                "Rating": "3.0"
-              } 
+              ,{
+                "Name": "This Is Who We Are",
+                "File": "m.mp3",
+                "Rating": "8.0"
+              }
             ]
           }
           ,
           {
-            "Name":"Monster Monster",
+            "Name": "Awakened",
+            "Month": "Septiembre",
+            "Year": "2012",
+            "Songs": [
+              {
+                "Name": "Cauterize",
+                "File": "m.mp3",
+                "Rating": "6.0"
+              }
+              ,
+              {
+                "Name": "A Greater Foundation",
+                "File": "m.mp3",
+                "Rating": "6.0"
+              }
+              ,
+              {
+                "Name": "No Lungs To Breath",
+                "File": "m.mp3",
+                "Rating": "6.0"
+              }
+              ,{
+                "Name": "Defender",
+                "File": "m.mp3",
+                "Rating": "6.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name": "Shaped By Fire",
+            "Month": "Septiembre",
+            "Year": "2019",
+            "Songs": [
+              {
+                "Name": "Burn To Emerge",
+                "File": "m.mp3",
+                "Rating": "10.0"
+              }
+              ,
+              {
+                "Name": "Blinded",
+                "File": "m.mp3",
+                "Rating": "10.0"
+              }
+              ,
+              {
+                "Name": "Torn Between",
+                "File": "m.mp3",
+                "Rating": "10.0"
+              }
+              ,{
+                "Name": "Redefined",
+                "File": "m.mp3",
+                "Rating": "10.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name": "The Powerless Rise",
+            "Month": "Mayo",
+            "Year": "2010",
+            "Songs": [
+              {
+                "Name": "Beyond Our Suffering",
+                "File": "m.mp3",
+                "Rating": "8.5"
+              }
+              ,
+              {
+                "Name": "Anger and Apathy",
+                "File": "m.mp3",
+                "Rating": "8.5"
+              }
+              ,
+              {
+                "Name": "Parallels",
+                "File": "m.mp3",
+                "Rating": "8.5"
+              }
+              ,{
+                "Name": "Condemned",
+                "File": "m.mp3",
+                "Rating": "8.5"
+              }
+            ]
+          }
+          ,
+          {
+            "Name": "Beneath the Encasing of Ashes",
             "Month": "Noviembre",
+            "Year": "2001",
+            "Songs": [
+              {
+                "Name": "Beneath the Encasing of Ashes",
+                "File": "m.mp3",
+                "Rating": "1.0"
+              }
+              ,
+              {
+                "Name": "Blood Turned to Tears",
+                "File": "m.mp3",
+                "Rating": "1.0"
+              }
+              ,
+              {
+                "Name": "A Long March",
+                "File": "m.mp3",
+                "Rating": "1.0"
+              }
+              ,{
+                "Name": "Behind Me Lies Another Fallen Soldier",
+                "File": "m.mp3",
+                "Rating": "1.0"
+              }
+            ]
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Artist" : {
+        "Name": "Bring Me The Horizon",
+        "Albums": [
+          {
+            "Name":"Sempiternal",
+            "Month": "Abril",
+            "Year": "2013",
+            "Songs": [
+              {
+                "Name": "Can You Feel My Heart",
+                "File": "c.mp3",
+                "Rating": "2.0"
+              }
+              ,
+              {
+                "Name": "The House of Wolves",
+                "File": "c.mp3",
+                "Rating": "2.0"
+              }
+              ,
+              {
+                "Name": "Sleepwalking",
+                "File": "c.mp3",
+                "Rating": "2.0"
+              }
+              ,
+              {
+                "Name": "Go To Hell For Heaven's Sake",
+                "File": "c.mp3",
+                "Rating": "2.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name":"That's the Spirit",
+            "Month": "Septiembre",
+            "Year": "2015",
+            "Songs": [
+              {
+                "Name": "Happy Song",
+                "File": "c.mp3",
+                "Rating": "2.5"
+              }
+              ,
+              {
+                "Name": "True Friends",
+                "File": "c.mp3",
+                "Rating": "2.5"
+              }
+              ,
+              {
+                "Name": "Follow You",
+                "File": "c.mp3",
+                "Rating": "2.5"
+              }
+              ,
+              {
+                "Name": "Drown",
+                "File": "c.mp3",
+                "Rating": "2.5"
+              }
+            ]
+          }
+          ,
+          {
+            "Name":"Amo",
+            "Month": "Enero",
+            "Year": "2019",
+            "Songs": [
+              {
+                "Name": "Mantra",
+                "File": "c.mp3",
+                "Rating": "2.6"
+              }
+              ,
+              {
+                "Name": "Sugar, Honey, Ice And Tea",
+                "File": "c.mp3",
+                "Rating": "2.6"
+              }
+              ,
+              {
+                "Name": "Medicine",
+                "File": "c.mp3",
+                "Rating": "2.6"
+              }
+              ,
+              {
+                "Name": "Heavy Metal",
+                "File": "c.mp3",
+                "Rating": "2.6"
+              }
+            ]
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Artist" : {
+        "Name": "For Today",
+        "Albums": [
+          {
+            "Name":"Breaker",
+            "Month": "Agosto",
+            "Year": "2010",
+            "Songs":[
+              {
+                "Name": "Devastator",
+                "File": "c.mp3",
+                "Rating": "9.5"
+              }
+              ,
+              {
+                "Name": "Seraphim",
+                "File": "c.mp3",
+                "Rating": "9.5"
+              }
+              ,
+              {
+                "Name": "Psalm of the Son",
+                "File": "c.mp3",
+                "Rating": "9.5"
+              }
+              ,
+              {
+                "Name": "Arm the Masses",
+                "File": "c.mp3",
+                "Rating": "9.5"
+              }
+            ]
+          }
+          ,
+          {
+            "Name":"Immortal",
+            "Month": "Mayo",
+            "Year": "2012",
+            "Songs":[
+              {
+                "Name": "The King",
+                "File": "c.mp3",
+                "Rating": "11.0"
+              }
+              ,
+              {
+                "Name": "Fearless",
+                "File": "c.mp3",
+                "Rating": "11.0"
+              }
+              ,
+              {
+                "Name": "Foundation",
+                "File": "c.mp3",
+                "Rating": "11.0"
+              }
+              ,
+              {
+                "Name": "The Only Name",
+                "File": "c.mp3",
+                "Rating": "11.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name":"Fight The Silence",
+            "Month": "Febrero",
+            "Year": "2014",
+            "Songs":[
+              {
+                "Name": "Hated By The World",
+                "File": "c.mp3",
+                "Rating": "7.0"
+              }
+              ,
+              {
+                "Name": "A Call To Arms",
+                "File": "c.mp3",
+                "Rating": "7.0"
+              }
+              ,
+              {
+                "Name": "For The Fallen",
+                "File": "c.mp3",
+                "Rating": "7.0"
+              }
+              ,
+              {
+                "Name": "One Voice",
+                "File": "c.mp3",
+                "Rating": "7.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name":"Portraits",
+            "Month": "Junio",
             "Year": "2009",
+            "Songs":[
+              {
+                "Name": "Immanuel (The Challenger)",
+                "File": "c.mp3",
+                "Rating": "9.8"
+              }
+              ,
+              {
+                "Name": "Elijah (The Forerunner)",
+                "File": "c.mp3",
+                "Rating": "9.8"
+              }
+              ,
+              {
+                "Name": "Talmidim (The Servants)",
+                "File": "c.mp3",
+                "Rating": "9.8"
+              }
+              ,
+              {
+                "Name": "Saul of Tarsus (The Messenger)",
+                "File": "c.mp3",
+                "Rating": "9.8"
+              }
+            ]
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Artist" : {
+        "Name": "Killswitch Engage",
+        "Albums":[
+          {
+            "Name":"As Daylight Dies",
+            "Month": "Noviembre",
+            "Year": "2006",
             "Songs": [
                {
-                "Name": "Monster Monster",
+                "Name": "My Curse",
                 "File": "c.mp3",
-                "Rating": "4.0"
+                "Rating": "3.0"
               }
               ,
               {
-                "Name": "Summer Summer",
+                "Name": "This Is Absolution",
                 "File": "c.mp3",
-                "Rating": "4.0"
+                "Rating": "3.0"
               }
               ,
               {
-                "Name": "Books & Books",
+                "Name": "Despereate Times",
                 "File": "c.mp3",
-                "Rating": "4.0"
+                "Rating": "3.0"
               }
               ,
               {
-                "Name": "Young Again",
+                "Name": "Eye Of The Storm",
                 "File": "c.mp3",
-                "Rating": "4.0"
-              } 
+                "Rating": "3.0"
+              }
             ]
           }
           ,
           {
-            "Name":"Fear Inside Our Bones",
-            "Month": "Junio",
+            "Name":"The End of Heartache",
+            "Month": "Mayo",
+            "Year": "2014",
+            "Songs": [
+               {
+                "Name": "When Darkness Falls",
+                "File": "c.mp3",
+                "Rating": "4.0"
+              }
+              ,
+              {
+                "Name": "World Ablaze",
+                "File": "c.mp3",
+                "Rating": "4.0"
+              }
+              ,
+              {
+                "Name": "Breathe Life",
+                "File": "c.mp3",
+                "Rating": "4.0"
+              }
+              ,
+              {
+                "Name": "Declaration",
+                "File": "c.mp3",
+                "Rating": "4.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name":"Atonement",
+            "Month": "Agosto",
+            "Year": "2019",
+            "Songs": [
+               {
+                "Name": "Unleashed",
+                "File": "c.mp3",
+                "Rating": "5.0"
+              }
+              ,
+              {
+                "Name": "Take Control",
+                "File": "c.mp3",
+                "Rating": "5.0"
+              }
+              ,
+              {
+                "Name": "The Signal Fire",
+                "File": "c.mp3",
+                "Rating": "5.0"
+              }
+              ,
+              {
+                "Name": "Know Your Enemy",
+                "File": "c.mp3",
+                "Rating": "5.0"
+              }
+            ]
+          }
+          ,
+          {
+              "Name":"Disarm the Descent",
+            "Month": "Abril",
             "Year": "2013",
             "Songs": [
                {
-                "Name": "Ghost",
+                "Name": "The Hell In Me",
                 "File": "c.mp3",
-                "Rating": "4.0"
+                "Rating": "6.0"
               }
               ,
               {
-                "Name": "Never Be Like You",
+                "Name": "The Call",
                 "File": "c.mp3",
-                "Rating": "4.0"
+                "Rating": "6.0"
               }
               ,
               {
-                "Name": "I Won't Let Go",
+                "Name": "Always",
                 "File": "c.mp3",
-                "Rating": "4.0"
+                "Rating": "6.0"
               }
               ,
               {
-                "Name": "Lonely Boy",
+                "Name": "In Due Time",
                 "File": "c.mp3",
-                "Rating": "4.0"
-              } 
-            ]
-          }
-          ,
-          {
-            "Name": "Fear Caller",
-            "Month": "Octubre",
-            "Year": "2019",
-            "Songs": [
-               {
-                "Name": "Chokehold",
-                "File": "c.mp3",
-                "Rating": "4.0"
+                "Rating": "6.0"
               }
-              ,
-              {
-                "Name": "Fire",
-                "File": "c.mp3",
-                "Rating": "4.0"
-              }
-              ,
-              {
-                "Name": "Fire",
-                "File": "c.mp3",
-                "Rating": "4.0"
-              }
-              ,
-              {
-                "Name": "Tame a Lion",
-                "File": "c.mp3",
-                "Rating": "4.0"
-              } 
             ]
           }
         ]
       }
     }
-	,
-	{
+    ,
+    {
       "Artist" : {
-        "Name": "NF",
+        "Name": "Demon Hunter",
         "Albums":[
           {
-            "Name":"The Search",
-            "Month": "Julio",
+            "Name":"Storm The Gates Of Hell",
+            "Month": "Noviembre",
+            "Year": "2007",
+            "Songs": [
+               {
+                "Name": "Storm the Gates of Hell",
+                "File": "c.mp3",
+                "Rating": "7.0"
+              }
+              ,
+              {
+                "Name": "Carry Me Down",
+                "File": "c.mp3",
+                "Rating": "7.0"
+              }
+              ,
+              {
+                "Name": "I Am You",
+                "File": "c.mp3",
+                "Rating": "7.0"
+              }
+              ,
+              {
+                "Name": "The Wrath of God",
+                "File": "c.mp3",
+                "Rating": "7.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name":"The Triptych",
+            "Month": "Octubre",
+            "Year": "2005",
+            "Songs": [
+               {
+                "Name": "Undying",
+                "File": "c.mp3",
+                "Rating": "8.0"
+              }
+              ,
+              {
+                "Name": "Deteriorate",
+                "File": "c.mp3",
+                "Rating": "8.0"
+              }
+              ,
+              {
+                "Name": "Fire To My Soul",
+                "File": "c.mp3",
+                "Rating": "8.0"
+              }
+              ,
+              {
+                "Name": "The Science of Lies",
+                "File": "c.mp3",
+                "Rating": "8.0"
+              }
+            ]
+          }
+          ,
+          {
+            "Name":"War",
+            "Month": "Marzo",
             "Year": "2019",
             "Songs": [
                {
-                "Name": "The Search",
+                "Name": "Cut To Fit",
                 "File": "c.mp3",
-                "Rating": "7.0"
+                "Rating": "5.0"
               }
               ,
               {
-                "Name": "My Stress",
+                "Name": "On My Side",
                 "File": "c.mp3",
-                "Rating": "7.0"
+                "Rating": "5.0"
               }
               ,
               {
-                "Name": "Time",
+                "Name": "The Negative",
                 "File": "c.mp3",
-                "Rating": "7.0"
+                "Rating": "5.0"
               }
               ,
               {
-                "Name": "I Miss the Days",
+                "Name": "Lesser Gods",
                 "File": "c.mp3",
-                "Rating": "7.0"
-              } 
+                "Rating": "5.0"
+              }
             ]
           }
           ,
           {
-            "Name":"Therapy Session",
-            "Month": "Abril",
-            "Year": "2016",
-            "Songs": [
-               {
-                "Name": "Therapy Session",
-                "File": "c.mp3",
-                "Rating": "8.0"
-              }
-              ,
-              {
-                "Name": "How Could You Leave Us",
-                "File": "c.mp3",
-                "Rating": "8.0"
-              }
-              ,
-              {
-                "Name": "Got You on My Mind",
-                "File": "c.mp3",
-                "Rating": "8.0"
-              }
-              ,
-              {
-                "Name": "Wish You Wouldn't",
-                "File": "c.mp3",
-                "Rating": "8.0"
-              } 
-            ]
-          }
-          ,
-          {
-            "Name":"Mansion",
+            "Name":"Peace",
             "Month": "Marzo",
-            "Year": "2015",
+            "Year": "2019",
             "Songs": [
                {
-                "Name": "Mansion",
+                "Name": "More Than Bones",
                 "File": "c.mp3",
                 "Rating": "4.0"
               }
               ,
               {
-                "Name": "All I Have",
+                "Name": "Recuse Myself",
                 "File": "c.mp3",
                 "Rating": "4.0"
               }
               ,
               {
-                "Name": "Wake Up",
+                "Name": "Fear is Not My Guide",
                 "File": "c.mp3",
                 "Rating": "4.0"
               }
               ,
               {
-                "Name": "Turn the Music Up",
-                "File": "c.mp3",
-                "Rating": "4.0"
-              } 
-            ]
-          }
-          ,
-          {
-            "Name":"Perception",
-            "Month": "Octubre",
-            "Year": "2017",
-            "Songs": [
-               {
-                "Name": "Outcast",
+                "Name": "Loneliness",
                 "File": "c.mp3",
                 "Rating": "4.0"
               }
-              ,
-              {
-                "Name": "Let You Down",
-                "File": "c.mp3",
-                "Rating": "4.0"
-              }
-              ,
-              {
-                "Name": "Destiny",
-                "File": "c.mp3",
-                "Rating": "4.0"
-              }
-              ,
-              {
-                "Name": "3 A.M.",
-                "File": "c.mp3",
-                "Rating": "4.0"
-              } 
             ]
           }
         ]
       }
     }
-	]
+    ,
+    {
+      "Artist" : {
+        "Name": "The Devil Wears Prada",
+        "Albums": [
+          {
+            "Name":"The Act",
+            "Month": "Octubre",
+            "Year": "2019",
+            "Songs": [
+               {
+                "Name": "Switchblade",
+                "File": "c.mp3",
+                "Rating": "6.5"
+              }
+              ,
+              {
+                "Name": "Lines Of Your Hands",
+                "File": "c.mp3",
+                "Rating": "6.5"
+              }
+              ,
+              {
+                "Name": "Chemical",
+                "File": "c.mp3",
+                "Rating": "6.5"
+              }
+              ,
+              {
+                "Name": "Wave Of Youth",
+                "File": "c.mp3",
+                "Rating": "6.5"
+              }
+            ]
+          }
+          ,
+          {
+            "Name":"Dear Love: A Beautiful Discord",
+            "Month": "Agosto",
+            "Year": "2006",
+            "Songs": [
+               {
+                "Name": "Dogs Can Grow Beards All Over",
+                "File": "c.mp3",
+                "Rating": "2.5"
+              }
+              ,
+              {
+                "Name": "Texas Is South",
+                "File": "c.mp3",
+                "Rating": "2.5"
+              }
+              ,
+              {
+                "Name": "Modeify the Pronunciation",
+                "File": "c.mp3",
+                "Rating": "2.5"
+              }
+              ,
+              {
+                "Name": "Salvation",
+                "File": "c.mp3",
+                "Rating": "2.5"
+              }
+            ]
+          }
+          ,
+          {
+            "Name":"Dead Throne",
+            "Month": "Septiembre",
+            "Year": "2013",
+            "Songs": [
+               {
+                "Name": "Mammoth",
+                "File": "c.mp3",
+                "Rating": "7.5"
+              }
+              ,
+              {
+                "Name": "Texas Is South",
+                "File": "c.mp3",
+                "Rating": "7.5"
+              }
+              ,
+              {
+                "Name": "My Questions",
+                "File": "c.mp3",
+                "Rating": "7.5"
+              }
+              ,
+              {
+                "Name": "Born To Lose",
+                "File": "c.mp3",
+                "Rating": "7.5"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }
